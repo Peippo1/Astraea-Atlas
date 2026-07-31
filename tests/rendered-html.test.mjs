@@ -14,7 +14,7 @@ test("renders Astraea Atlas metadata and experience shell", async () => {
   const html = await response.text();
   assert.match(html, /<title>Astraea Atlas/);
   assert.match(html, /ASTRAEA/);
-  assert.match(html, /THE CELESTIAL INDEX/);
+  assert.match(html, /LIVE ARCHIVE VIEW/);
   assert.match(html, /Detection method/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
