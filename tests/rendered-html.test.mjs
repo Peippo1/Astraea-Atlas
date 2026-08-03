@@ -14,7 +14,8 @@ test("renders Astraea Atlas metadata and experience shell", async () => {
   const html = await response.text();
   assert.match(html, /<title>Astraea Atlas/);
   assert.match(html, /ASTRAEA/);
-  assert.match(html, /LIVE ARCHIVE VIEW/);
+  assert.match(html, /GENERATED CELESTIAL GLOBE/);
+  assert.match(html, /MAP GENERATOR/);
   assert.match(html, /Detection method/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
@@ -28,4 +29,6 @@ test("exposes the normalized data route", async () => {
   assert.ok(Array.isArray(payload.items));
   assert.ok(payload.items.length > 0);
   assert.ok(payload.items.every((item) => typeof item.name === "string" && typeof item.discoveryMethod === "string"));
+  assert.ok(payload.items.every((item) => item.rightAscension === null || (typeof item.rightAscension === "number" && item.rightAscension >= 0 && item.rightAscension <= 360)));
+  assert.ok(payload.items.every((item) => item.declination === null || (typeof item.declination === "number" && item.declination >= -90 && item.declination <= 90)));
 });

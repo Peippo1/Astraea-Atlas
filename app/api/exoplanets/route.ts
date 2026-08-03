@@ -1,7 +1,7 @@
 import { fallbackResponse, normalizeRows, type ExoplanetResponse } from "../../../lib/exoplanets";
 
 const TAP_URL = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync";
-const QUERY = `select top 180 pl_name,hostname,disc_year,discoverymethod,pl_orbper,pl_rade,pl_masse,sy_dist from ps where default_flag=1 and upper(soltype) like '%CONF%' and disc_year is not null order by disc_year desc`;
+const QUERY = `select top 180 pl_name,hostname,disc_year,discoverymethod,pl_orbper,pl_rade,pl_masse,sy_dist,ra,dec from ps where default_flag=1 and upper(soltype) like '%CONF%' and disc_year is not null order by disc_year desc`;
 
 export async function GET(): Promise<Response> {
   try {
