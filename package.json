@@ -16,9 +16,9 @@
   "dependencies": {
     "@types/three": "^0.185.1",
     "drizzle-orm": "0.45.2",
-    "next": "16.3.0",
-    "react": "19.2.6",
-    "react-dom": "19.2.6",
+    "next": "16.4.5",
+    "react": "19.2.9",
+    "react-dom": "19.2.9",
     "three": "^0.185.1"
   },
   "devDependencies": {
@@ -32,12 +32,19 @@
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
-    "react-server-dom-webpack": "19.2.6",
+    "react-server-dom-webpack": "19.2.9",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vinext": "0.0.50",
-    "vite": "8.2.1",
+    "vite": "8.2.4",
     "wrangler": "4.120.0"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "browserslist": "4.28.7",
+    "js-yaml": "4.3.2",
+    "sharp": "0.35.5",
+    "source-map-js": "1.2.2",
+    "undici": "7.30.1"
+  }
 }
